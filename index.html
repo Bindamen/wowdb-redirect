@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirect WowDB</title>
+  <script>
+    // Récupère le code dans l'URL Blizzard
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+
+    // Redirige vers ton app iOS via le deep link
+    if (code) {
+      window.location.href = `wowdb://callback?code=${code}`;
+    } else {
+      document.body.innerHTML = "Erreur : code manquant";
+    }
+  </script>
+</head>
+<body>
+  Redirection…
+</body>
+</html>
